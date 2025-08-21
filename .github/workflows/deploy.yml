@@ -32,9 +32,16 @@ jobs:
 
       - name: Build with base URL
         env:
-          # Укажите путь репозитория, например '/portfolio-3d/' для project pages
-          BASE_URL: ${{ vars.BASE_URL }}
+          # Для user pages (username.github.io) BASE_URL не нужен
+          BASE_URL: ${{ vars.BASE_URL || '' }}
         run: npm run build
+
+      - name: Debug build output
+        run: |
+          echo "Checking build output..."
+          ls -la
+          ls -la .output/ || echo "No .output directory"
+          ls -la .output/public/ || echo "No .output/public directory"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
