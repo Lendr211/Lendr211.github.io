@@ -13,7 +13,6 @@ yarn-error.log*
 dist
 
 # Node dependencies
-package-lock.json
 yarn.lock
 
 # Environment variables
