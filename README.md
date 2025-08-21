@@ -123,10 +123,18 @@ npm run build
 npm run preview
 ```
 
-### Хостинг
+### GitHub Pages (рекомендуется)
+1. Включите Pages в настройках репозитория: Settings → Pages → Source: GitHub Actions
+2. Для project pages укажите переменную `BASE_URL` в Repository → Settings → Variables → Actions: `/REPO_NAME/`
+3. Закоммитьте в ветку `main` — Workflow соберет и опубликует сайт
+4. Локально проверить можно:
+   - Windows PowerShell: `($env:BASE_URL = '/REPO_NAME/') -and (npm run build)` затем откройте `.output/public/index.html`
+   - По умолчанию для `username.github.io` `BASE_URL` не требуется
+
+### Другие хостинги
 1. Соберите проект: `npm run build`
-2. Загрузите папку `.output` на хостинг
-3. Настройте PHP для обработки API запросов
+2. Загрузите папку `.output/public` как статический сайт
+3. PHP эндпоинты из `api/` на Pages не работают. Нужен отдельный бекенд или форма без сервера (Formspree и т.п.)
 
 ### Vercel/Netlify
 1. Подключите репозиторий к платформе

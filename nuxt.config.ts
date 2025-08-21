@@ -13,6 +13,9 @@ export default defineNuxtConfig({
   
   // Настройки приложения
   app: {
+    // Базовый префикс для GitHub Pages. Для проекта в виде username.github.io оставьте '/'
+    // Для project pages будет вида '/repo-name/' и берётся из переменной окружения BASE_URL
+    baseURL: process.env.BASE_URL || '/',
     head: {
       title: '3D Portfolio',
       meta: [
@@ -30,6 +33,14 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       apiBase: process.env.API_BASE || 'http://localhost:8000'
+    }
+  },
+
+  // Настройки сборки для GitHub Pages и предварительный рендер статических маршрутов
+  nitro: {
+    preset: 'github_pages',
+    prerender: {
+      routes: ['/', '/about', '/contact', '/portfolio', '/test']
     }
   },
   
