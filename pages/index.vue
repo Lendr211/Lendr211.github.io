@@ -118,13 +118,13 @@
 </template>
 
 <script setup>
-import { ChevronDown, Cube, Camera, Palette, Zap } from 'lucide-vue-next'
+import { ChevronDown, Box, Camera, Palette, Zap } from 'lucide-vue-next'
 
 const services = [
   {
     title: '3D Моделирование',
     description: 'Создание детализированных 3D моделей для различных целей',
-    icon: Cube
+    icon: Box
   },
   {
     title: 'Визуализация',
