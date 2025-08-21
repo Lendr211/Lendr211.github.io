@@ -17,7 +17,7 @@ export default defineNuxtConfig({
     // Для project pages будет вида '/repo-name/' и берётся из переменной окружения BASE_URL
     baseURL: process.env.BASE_URL || '/',
     head: {
-      title: '3D Portfolio',
+      title: '3D от Raven',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
