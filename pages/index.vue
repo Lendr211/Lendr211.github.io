@@ -12,7 +12,7 @@
       <!-- Main Content -->
       <div class="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 class="text-5xl md:text-7xl font-bold mb-6">
-          <span class="gradient-text">3D Портфолио</span>
+          <span class="gradient-text">3D Портфолио Raven</span>
         </h1>
         <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
           Создаю уникальные 3D макеты, визуализации и интерактивные проекты для ваших идей
