@@ -8,7 +8,7 @@
           <div class="flex-shrink-0">
             <button @click="navigateToHome" class="text-2xl font-bold bg-gradient-to-r from-pink-600 to-pink-700 bg-clip-text text-transparent hover:opacity-80 transition-opacity interactive-button">
               <span class="flex items-center">
-                <Cube class="w-8 h-8 mr-2 text-pink-500" />
+                <Box class="w-8 h-8 mr-2 text-pink-500" />
                 3D Portfolio
               </span>
             </button>
@@ -81,7 +81,7 @@
           <!-- Brand -->
           <div>
             <div class="flex items-center mb-4">
-              <Cube class="w-8 h-8 mr-2 text-pink-600" />
+              <Box class="w-8 h-8 mr-2 text-pink-600" />
               <h3 class="text-xl font-bold bg-gradient-to-r from-pink-600 to-pink-700 bg-clip-text text-transparent">3D Portfolio</h3>
             </div>
             <p class="text-gray-600 mb-4">
@@ -98,7 +98,7 @@
                 <Github class="h-5 w-5" />
               </a>
               <a href="#" class="text-gray-500 hover:text-pink-600 transition-colors duration-300 interactive-button">
-                <Behance class="h-5 w-5" />
+                <Globe class="h-5 w-5" />
               </a>
             </div>
           </div>
@@ -175,8 +175,8 @@ import {
   Instagram, 
   Linkedin, 
   Github, 
-  Behance,
-  Cube,
+  Globe,
+  Box,
   Home,
   FolderOpen,
   User,
