@@ -1,14 +1,14 @@
 <template>
   <div>
     <!-- Hero Section -->
-    <section class="py-20 bg-dark-800">
+    <section class="py-20 bg-rose-100">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h1 class="text-5xl font-bold mb-6">
               О <span class="gradient-text">мне</span>
             </h1>
-            <p class="text-xl text-gray-300 mb-8">
+            <p class="text-xl text-gray-600 mb-8">
               Привет! Я 3D художник и визуализатор с более чем 3-летним опытом создания качественных 3D моделей и визуализаций.
             </p>
             <div class="flex flex-wrap gap-4">
@@ -21,8 +21,8 @@
             </div>
           </div>
           <div class="relative">
-            <div class="w-full h-96 bg-gradient-to-br from-primary-500/20 to-primary-600/20 rounded-2xl flex items-center justify-center">
-              <User class="h-32 w-32 text-primary-400" />
+            <div class="w-full h-96 bg-gradient-to-br from-primary-200 to-primary-300 rounded-2xl flex items-center justify-center">
+              <User class="h-32 w-32 text-primary-600" />
             </div>
           </div>
         </div>
@@ -35,13 +35,13 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
             <h2 class="text-3xl font-bold mb-6">Мой путь</h2>
-            <p class="text-gray-300 mb-6">
+            <p class="text-gray-600 mb-6">
               Я начал свой путь в 3D графике еще в университете, изучая архитектуру. С тех пор я работал над множеством проектов, от архитектурных визуализаций до концептуального дизайна продуктов.
             </p>
-            <p class="text-gray-300 mb-6">
+            <p class="text-gray-600 mb-6">
               Моя страсть к 3D моделированию и визуализации привела меня к работе с различными клиентами по всему миру. Я специализируюсь на создании фотореалистичных рендеров и инновационных 3D концептов.
             </p>
-            <p class="text-gray-300">
+            <p class="text-gray-600">
               Каждый проект для меня - это возможность создать что-то уникальное и вдохновляющее. Я постоянно изучаю новые технологии и техники, чтобы оставаться на переднем крае индустрии.
             </p>
           </div>
@@ -66,13 +66,13 @@
     </section>
     
     <!-- Skills Section -->
-    <section class="py-20 bg-dark-800">
+    <section class="py-20 bg-rose-100">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-4xl font-bold mb-4">
             Мои <span class="gradient-text">навыки</span>
           </h2>
-          <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
             Профессиональные инструменты и технологии, которые я использую в работе
           </p>
         </div>
@@ -82,15 +82,15 @@
             <h3 class="text-xl font-semibold mb-4">{{ skill.category }}</h3>
             <div class="space-y-3">
               <div v-for="item in skill.items" :key="item.name" class="flex justify-between items-center">
-                <span class="text-gray-300">{{ item.name }}</span>
+                <span class="text-gray-600">{{ item.name }}</span>
                 <div class="flex items-center">
-                  <div class="w-24 bg-dark-700 rounded-full h-2 mr-3">
+                  <div class="w-24 bg-rose-200 rounded-full h-2 mr-3">
                     <div 
                       class="bg-primary-500 h-2 rounded-full transition-all duration-1000"
                       :style="{ width: item.level + '%' }"
                     ></div>
                   </div>
-                  <span class="text-sm text-gray-400 w-8">{{ item.level }}%</span>
+                  <span class="text-sm text-gray-600 w-8">{{ item.level }}%</span>
                 </div>
               </div>
             </div>
@@ -106,7 +106,7 @@
           <h2 class="text-4xl font-bold mb-4">
             Опыт <span class="gradient-text">работы</span>
           </h2>
-          <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
             Моя профессиональная карьера и достижения
           </p>
         </div>
@@ -116,13 +116,13 @@
             <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
               <div>
                 <h3 class="text-xl font-semibold">{{ experience.position }}</h3>
-                <p class="text-primary-400">{{ experience.company }}</p>
+                <p class="text-primary-600">{{ experience.company }}</p>
               </div>
-              <div class="text-gray-400 mt-2 md:mt-0">
+              <div class="text-gray-600 mt-2 md:mt-0">
                 {{ experience.period }}
               </div>
             </div>
-            <p class="text-gray-300 mb-4">{{ experience.description }}</p>
+            <p class="text-gray-600 mb-4">{{ experience.description }}</p>
             <div class="flex flex-wrap gap-2">
               <span 
                 v-for="tech in experience.technologies" 
@@ -138,13 +138,13 @@
     </section>
     
     <!-- Testimonials Section -->
-    <section class="py-20 bg-dark-800">
+    <section class="py-20 bg-rose-100">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-4xl font-bold mb-4">
             Отзывы <span class="gradient-text">клиентов</span>
           </h2>
-          <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
             Что говорят о моей работе клиенты и партнеры
           </p>
         </div>
@@ -152,15 +152,15 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div v-for="testimonial in testimonials" :key="testimonial.id" class="card">
             <div class="flex items-center mb-4">
-              <div class="w-12 h-12 bg-primary-500/20 rounded-full flex items-center justify-center mr-4">
-                <User class="h-6 w-6 text-primary-400" />
+              <div class="w-12 h-12 bg-primary-200 rounded-full flex items-center justify-center mr-4">
+                <User class="h-6 w-6 text-primary-600" />
               </div>
               <div>
                 <h4 class="font-semibold">{{ testimonial.name }}</h4>
-                <p class="text-gray-400 text-sm">{{ testimonial.position }}</p>
+                <p class="text-gray-600 text-sm">{{ testimonial.position }}</p>
               </div>
             </div>
-            <p class="text-gray-300 italic">"{{ testimonial.text }}"</p>
+            <p class="text-gray-600 italic">"{{ testimonial.text }}"</p>
           </div>
         </div>
       </div>

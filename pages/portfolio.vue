@@ -1,19 +1,19 @@
 <template>
   <div>
     <!-- Hero Section -->
-    <section class="py-20 bg-dark-800">
+    <section class="py-20 bg-rose-100">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 class="text-5xl font-bold mb-6">
           <span class="gradient-text">Портфолио</span>
         </h1>
-        <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
           Коллекция моих лучших работ в области 3D моделирования, визуализации и дизайна
         </p>
       </div>
     </section>
     
     <!-- Filters -->
-    <section class="py-8 border-b border-dark-700">
+    <section class="py-8 border-b border-rose-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-wrap gap-4 justify-center">
           <button 
@@ -23,8 +23,8 @@
             :class="[
               'px-6 py-2 rounded-full transition-all duration-300',
               selectedCategory === category 
-                ? 'bg-primary-600 text-white' 
-                : 'bg-dark-700 text-gray-300 hover:bg-dark-600'
+                ? 'bg-primary-500 text-white' 
+                : 'bg-rose-200 text-gray-700 hover:bg-rose-300'
             ]"
           >
             {{ category }}
@@ -43,27 +43,27 @@
             class="group cursor-pointer"
             @click="openProject(project)"
           >
-            <div class="relative overflow-hidden rounded-xl bg-dark-800">
+            <div class="relative overflow-hidden rounded-xl bg-white">
               <img 
                 :src="project.image" 
                 :alt="project.title"
                 class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
               />
-              <div class="absolute inset-0 bg-gradient-to-t from-dark-900/90 via-dark-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-rose-200/60 via-rose-200/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div class="text-center">
-                  <Eye class="h-12 w-12 text-white mx-auto mb-4" />
-                  <span class="text-white font-medium">Посмотреть детали</span>
+                  <Eye class="h-12 w-12 text-primary-600 mx-auto mb-4" />
+                  <span class="text-gray-800 font-medium">Посмотреть детали</span>
                 </div>
               </div>
               <div class="absolute bottom-0 left-0 right-0 p-6">
                 <h3 class="text-xl font-semibold mb-2">{{ project.title }}</h3>
-                <p class="text-gray-300 mb-4">{{ project.description }}</p>
+                <p class="text-gray-700 mb-4">{{ project.description }}</p>
                 <div class="flex flex-wrap gap-2">
                   <span 
                     v-for="tag in project.tags" 
                     :key="tag"
-                    class="px-3 py-1 bg-primary-600/20 text-primary-400 rounded-full text-sm"
+                    class="px-3 py-1 bg-primary-100 text-primary-600 rounded-full text-sm"
                   >
                     {{ tag }}
                   </span>
@@ -85,11 +85,11 @@
     <!-- Project Modal -->
     <div v-if="selectedProject" class="fixed inset-0 z-50 flex items-center justify-center p-4">
       <div class="absolute inset-0 bg-black/80" @click="closeProject"></div>
-      <div class="relative bg-dark-800 rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+      <div class="relative bg-rose-100 rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
         <div class="p-6">
           <div class="flex justify-between items-start mb-6">
             <h2 class="text-3xl font-bold">{{ selectedProject.title }}</h2>
-            <button @click="closeProject" class="text-gray-400 hover:text-white">
+            <button @click="closeProject" class="text-gray-600 hover:text-primary-600">
               <X class="h-6 w-6" />
             </button>
           </div>
@@ -103,14 +103,14 @@
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <h3 class="text-xl font-semibold mb-4">Описание проекта</h3>
-              <p class="text-gray-300 mb-4">{{ selectedProject.fullDescription }}</p>
+              <p class="text-gray-600 mb-4">{{ selectedProject.fullDescription }}</p>
               
               <h4 class="text-lg font-semibold mb-3">Технологии</h4>
               <div class="flex flex-wrap gap-2 mb-6">
                 <span 
                   v-for="tech in selectedProject.technologies" 
                   :key="tech"
-                  class="px-3 py-1 bg-primary-600/20 text-primary-400 rounded-full text-sm"
+                  class="px-3 py-1 bg-primary-100 text-primary-600 rounded-full text-sm"
                 >
                   {{ tech }}
                 </span>
@@ -121,20 +121,20 @@
               <h3 class="text-xl font-semibold mb-4">Детали проекта</h3>
               <div class="space-y-3">
                 <div>
-                  <span class="text-gray-400">Категория:</span>
-                  <span class="text-white ml-2">{{ selectedProject.category }}</span>
+                  <span class="text-gray-600">Категория:</span>
+                  <span class="text-gray-800 ml-2">{{ selectedProject.category }}</span>
                 </div>
                 <div>
-                  <span class="text-gray-400">Дата:</span>
-                  <span class="text-white ml-2">{{ selectedProject.date }}</span>
+                  <span class="text-gray-600">Дата:</span>
+                  <span class="text-gray-800 ml-2">{{ selectedProject.date }}</span>
                 </div>
                 <div>
-                  <span class="text-gray-400">Клиент:</span>
-                  <span class="text-white ml-2">{{ selectedProject.client }}</span>
+                  <span class="text-gray-600">Клиент:</span>
+                  <span class="text-gray-800 ml-2">{{ selectedProject.client }}</span>
                 </div>
                 <div>
-                  <span class="text-gray-400">Время работы:</span>
-                  <span class="text-white ml-2">{{ selectedProject.duration }}</span>
+                  <span class="text-gray-600">Время работы:</span>
+                  <span class="text-gray-800 ml-2">{{ selectedProject.duration }}</span>
                 </div>
               </div>
               
