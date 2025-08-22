@@ -22,7 +22,7 @@
             Смотреть работы
           </NuxtLink>
           <NuxtLink to="/contact" class="btn-secondary">
-            Связаться со нами 
+            Связаться со мной 
           </NuxtLink>
         </div>
       </div>
