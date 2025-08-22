@@ -1,24 +1,28 @@
 <template>
   <div>
     <!-- Hero Section -->
-    <section class="py-20 bg-rose-100">
+    <section class="py-20 bg-gradient-sakura">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="inline-flex items-center px-4 py-2 bg-pink-500/20 border border-pink-500/30 rounded-full text-pink-700 text-sm font-medium mb-6 shadow-sakura">
+          <MessageCircle class="w-4 h-4 mr-2" />
+          Свяжитесь со мной
+        </div>
         <h1 class="text-5xl font-bold mb-6">
-          <span class="gradient-text">Контакты</span>
+          <span class="bg-gradient-to-r from-pink-600 to-pink-700 bg-clip-text text-transparent">Контакты</span>
         </h1>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        <p class="text-xl text-gray-700 max-w-2xl mx-auto">
           Готов обсудить ваш проект? Свяжитесь со мной любым удобным способом
         </p>
       </div>
     </section>
     
     <!-- Contact Section -->
-    <section class="py-20">
+    <section class="py-20 bg-gradient-to-b from-white to-pink-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <!-- Contact Form -->
           <div>
-            <h2 class="text-3xl font-bold mb-6">Отправить сообщение</h2>
+            <h2 class="text-3xl font-bold mb-6 text-gray-800">Отправить сообщение</h2>
             <form @submit.prevent="submitForm" class="space-y-6">
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
@@ -30,7 +34,7 @@
                     v-model="form.firstName"
                     type="text"
                     required
-                    class="w-full px-4 py-3 bg-white border border-rose-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-800 placeholder-gray-500"
+                    class="w-full px-4 py-3 bg-white border border-pink-200 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent text-gray-800 placeholder-gray-500 transition-all duration-300"
                     placeholder="Ваше имя"
                   />
                 </div>
@@ -42,7 +46,7 @@
                     id="lastName"
                     v-model="form.lastName"
                     type="text"
-                    class="w-full px-4 py-3 bg-white border border-rose-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-800 placeholder-gray-500"
+                    class="w-full px-4 py-3 bg-white border border-pink-200 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent text-gray-800 placeholder-gray-500 transition-all duration-300"
                     placeholder="Ваша фамилия"
                   />
                 </div>
@@ -57,7 +61,7 @@
                   v-model="form.email"
                   type="email"
                   required
-                  class="w-full px-4 py-3 bg-white border border-rose-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-800 placeholder-gray-500"
+                  class="w-full px-4 py-3 bg-white border border-pink-200 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent text-gray-800 placeholder-gray-500 transition-all duration-300"
                   placeholder="your@email.com"
                 />
               </div>
@@ -70,7 +74,7 @@
                   id="phone"
                   v-model="form.phone"
                   type="tel"
-                  class="w-full px-4 py-3 bg-white border border-rose-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-800 placeholder-gray-500"
+                  class="w-full px-4 py-3 bg-white border border-pink-200 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent text-gray-800 placeholder-gray-500 transition-all duration-300"
                   placeholder="+7 (999) 123-45-67"
                 />
               </div>
@@ -82,7 +86,7 @@
                 <select
                   id="projectType"
                   v-model="form.projectType"
-                  class="w-full px-4 py-3 bg-white border border-rose-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-800"
+                  class="w-full px-4 py-3 bg-white border border-pink-200 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent text-gray-800 transition-all duration-300"
                 >
                   <option value="">Выберите тип проекта</option>
                   <option value="architecture">Архитектурная визуализация</option>
@@ -100,7 +104,7 @@
                 <select
                   id="budget"
                   v-model="form.budget"
-                  class="w-full px-4 py-3 bg-white border border-rose-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-800"
+                  class="w-full px-4 py-3 bg-white border border-pink-200 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent text-gray-800 transition-all duration-300"
                 >
                   <option value="">Выберите бюджет</option>
                   <option value="small">До 50,000 ₽</option>
@@ -119,7 +123,7 @@
                   v-model="form.message"
                   rows="6"
                   required
-                  class="w-full px-4 py-3 bg-white border border-rose-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-800 placeholder-gray-500 resize-none"
+                  class="w-full px-4 py-3 bg-white border border-pink-200 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent text-gray-800 placeholder-gray-500 resize-none transition-all duration-300"
                   placeholder="Опишите ваш проект, требования и пожелания..."
                 ></textarea>
               </div>
@@ -127,82 +131,96 @@
               <button 
                 type="submit" 
                 :disabled="isSubmitting"
-                class="w-full btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
+                class="w-full bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-sakura-lg disabled:opacity-50 disabled:cursor-not-allowed interactive-button"
               >
-                <span v-if="isSubmitting">Отправка...</span>
-                <span v-else>Отправить сообщение</span>
+                <span v-if="isSubmitting" class="flex items-center justify-center">
+                  <div class="animate-spin rounded-full border-2 border-white border-t-transparent w-5 h-5 mr-2"></div>
+                  Отправка...
+                </span>
+                <span v-else class="flex items-center justify-center">
+                  <Send class="w-5 h-5 mr-2" />
+                  Отправить сообщение
+                </span>
               </button>
             </form>
           </div>
           
           <!-- Contact Info -->
           <div>
-            <h2 class="text-3xl font-bold mb-6">Контактная информация</h2>
-            <div class="space-y-8">
-              <div class="card">
+            <h2 class="text-3xl font-bold mb-6 text-gray-800">Контактная информация</h2>
+            <div class="space-y-6">
+              <div class="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-pink-200 hover:border-pink-300 transition-all duration-300 hover:shadow-sakura group">
                 <div class="flex items-center mb-4">
-                  <Mail class="h-6 w-6 text-primary-600 mr-4" />
-                  <h3 class="text-xl font-semibold">Email</h3>
+                  <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center mr-4 group-hover:bg-pink-500/30 transition-colors duration-300">
+                    <Mail class="h-6 w-6 text-pink-600" />
+                  </div>
+                  <h3 class="text-xl font-semibold text-gray-800">Email</h3>
                 </div>
                 <p class="text-gray-600 mb-2">contact@portfolio3d.com</p>
-                <p class="text-gray-600 text-sm">Отвечаю в течение 24 часов</p>
+                <p class="text-gray-500 text-sm">Отвечаю в течение 24 часов</p>
               </div>
               
-              <div class="card">
+              <div class="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-pink-200 hover:border-pink-300 transition-all duration-300 hover:shadow-sakura group">
                 <div class="flex items-center mb-4">
-                  <Phone class="h-6 w-6 text-primary-600 mr-4" />
-                  <h3 class="text-xl font-semibold">Телефон</h3>
+                  <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center mr-4 group-hover:bg-pink-500/30 transition-colors duration-300">
+                    <Phone class="h-6 w-6 text-pink-600" />
+                  </div>
+                  <h3 class="text-xl font-semibold text-gray-800">Телефон</h3>
                 </div>
                 <p class="text-gray-600 mb-2">+7 (999) 123-45-67</p>
-                <p class="text-gray-600 text-sm">Пн-Пт: 9:00 - 18:00</p>
+                <p class="text-gray-500 text-sm">Пн-Пт: 9:00 - 18:00</p>
               </div>
               
-              <div class="card">
+              <div class="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-pink-200 hover:border-pink-300 transition-all duration-300 hover:shadow-sakura group">
                 <div class="flex items-center mb-4">
-                  <MapPin class="h-6 w-6 text-primary-600 mr-4" />
-                  <h3 class="text-xl font-semibold">Местоположение</h3>
+                  <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center mr-4 group-hover:bg-pink-500/30 transition-colors duration-300">
+                    <MapPin class="h-6 w-6 text-pink-600" />
+                  </div>
+                  <h3 class="text-xl font-semibold text-gray-800">Местоположение</h3>
                 </div>
                 <p class="text-gray-600 mb-2">Москва, Россия</p>
-                <p class="text-gray-600 text-sm">Работаю удаленно по всему миру</p>
+                <p class="text-gray-500 text-sm">Работаю удаленно по всему миру</p>
               </div>
               
-              <div class="card">
+              <div class="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-pink-200 hover:border-pink-300 transition-all duration-300 hover:shadow-sakura group">
                 <div class="flex items-center mb-4">
-                  <Clock class="h-6 w-6 text-primary-600 mr-4" />
-                  <h3 class="text-xl font-semibold">Время работы</h3>
+                  <div class="w-12 h-12 bg-pink-500/20 rounded-lg flex items-center justify-center mr-4 group-hover:bg-pink-500/30 transition-colors duration-300">
+                    <Clock class="h-6 w-6 text-pink-600" />
+                  </div>
+                  <h3 class="text-xl font-semibold text-gray-800">Время работы</h3>
                 </div>
                 <p class="text-gray-600 mb-2">Понедельник - Пятница</p>
-                <p class="text-gray-600 text-sm">9:00 - 18:00 (МСК)</p>
+                <p class="text-gray-500 text-sm">9:00 - 18:00 (МСК)</p>
               </div>
             </div>
             
             <!-- Social Links -->
             <div class="mt-12">
-              <h3 class="text-xl font-semibold mb-6">Социальные сети</h3>
+              <h3 class="text-xl font-semibold mb-6 text-gray-800">Социальные сети</h3>
               <div class="flex space-x-4">
                 <a 
                   href="#" 
-                  class="w-12 h-12 bg-rose-200 hover:bg-primary-600 rounded-lg flex items-center justify-center transition-colors duration-300"
+                  class="w-12 h-12 bg-pink-500/20 hover:bg-pink-500 rounded-lg flex items-center justify-center transition-all duration-300 interactive-button"
                 >
-                  <Instagram class="h-6 w-6 text-primary-600 hover:text-white" />
+                  <Instagram class="h-6 w-6 text-pink-600 hover:text-white" />
                 </a>
                 <a 
                   href="#" 
-                  class="w-12 h-12 bg-rose-200 hover:bg-primary-600 rounded-lg flex items-center justify-center transition-colors duration-300"
+                  class="w-12 h-12 bg-pink-500/20 hover:bg-pink-500 rounded-lg flex items-center justify-center transition-all duration-300 interactive-button"
                 >
-                  <Linkedin class="h-6 w-6 text-primary-600 hover:text-white" />
+                  <Linkedin class="h-6 w-6 text-pink-600 hover:text-white" />
                 </a>
                 <a 
                   href="#" 
-                  class="w-12 h-12 bg-rose-200 hover:bg-primary-600 rounded-lg flex items-center justify-center transition-colors duration-300"
+                  class="w-12 h-12 bg-pink-500/20 hover:bg-pink-500 rounded-lg flex items-center justify-center transition-all duration-300 interactive-button"
                 >
-                  <Github class="h-6 w-6 text-primary-600 hover:text-white" />
+                  <Github class="h-6 w-6 text-pink-600 hover:text-white" />
                 </a>
                 <a 
                   href="#" 
-                  class="w-12 h-12 bg-rose-200 hover:bg-primary-600 rounded-lg flex items-center justify-center transition-colors duration-300"
+                  class="w-12 h-12 bg-pink-500/20 hover:bg-pink-500 rounded-lg flex items-center justify-center transition-all duration-300 interactive-button"
                 >
-                  <Youtube class="h-6 w-6 text-primary-600 hover:text-white" />
+                  <Youtube class="h-6 w-6 text-pink-600 hover:text-white" />
                 </a>
               </div>
             </div>
@@ -212,11 +230,15 @@
     </section>
     
     <!-- FAQ Section -->
-    <section class="py-20 bg-rose-100">
+    <section class="py-20 bg-gradient-to-b from-pink-50 to-pink-100">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold mb-4">
-            Часто задаваемые <span class="gradient-text">вопросы</span>
+          <div class="inline-flex items-center px-4 py-2 bg-pink-500/10 border border-pink-500/20 rounded-full text-pink-600 text-sm font-medium mb-6">
+            <HelpCircle class="w-4 h-4 mr-2" />
+            FAQ
+          </div>
+          <h2 class="text-4xl font-bold mb-4 text-gray-800">
+            Часто задаваемые <span class="bg-gradient-to-r from-pink-500 to-pink-700 bg-clip-text text-transparent">вопросы</span>
           </h2>
           <p class="text-xl text-gray-600">
             Ответы на популярные вопросы о моих услугах
@@ -224,20 +246,20 @@
         </div>
         
         <div class="space-y-6">
-          <div v-for="faq in faqs" :key="faq.id" class="card">
+          <div v-for="faq in faqs" :key="faq.id" class="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-pink-200 hover:border-pink-300 transition-all duration-300 hover:shadow-sakura group">
             <button 
               @click="toggleFaq(faq.id)"
               class="w-full text-left flex justify-between items-center"
             >
-              <h3 class="text-lg font-semibold">{{ faq.question }}</h3>
+              <h3 class="text-lg font-semibold text-gray-800 group-hover:text-pink-700 transition-colors duration-300">{{ faq.question }}</h3>
               <ChevronDown 
-                class="h-5 w-5 text-gray-600 transition-transform duration-300"
+                class="h-5 w-5 text-gray-500 transition-transform duration-300 group-hover:text-pink-600"
                 :class="{ 'rotate-180': openFaqs.includes(faq.id) }"
               />
             </button>
             <div 
               v-show="openFaqs.includes(faq.id)"
-              class="mt-4 text-gray-600"
+              class="mt-4 text-gray-600 leading-relaxed"
             >
               {{ faq.answer }}
             </div>
@@ -249,7 +271,20 @@
 </template>
 
 <script setup>
-import { Mail, Phone, MapPin, Clock, Instagram, Linkedin, Github, Youtube, ChevronDown } from 'lucide-vue-next'
+import { 
+  Mail, 
+  Phone, 
+  MapPin, 
+  Clock, 
+  Instagram, 
+  Linkedin, 
+  Github, 
+  Youtube, 
+  ChevronDown,
+  MessageCircle,
+  Send,
+  HelpCircle
+} from 'lucide-vue-next'
 
 const form = ref({
   firstName: '',
